@@ -81,7 +81,8 @@ contains
       integer, intent(in) :: mpiroot
       type(MPI_Comm), intent(in) :: mpicomm
       if (initialized) return
-      root = mpiroot
+      root = 0
+!     root = mpiroot
       comm = mpicomm
       call MPI_COMM_RANK(comm, mype, ierror)
       call MPI_COMM_SIZE(comm, npes, ierror)
